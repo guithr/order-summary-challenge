@@ -7,7 +7,7 @@
 html {
   font-size: 62.5%;
 }
-
+/* Variabels */
 :root {
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
@@ -20,25 +20,27 @@ body {
   font-family: "Red Hat Display", sans-serif;
 
   background-image: url(/images/pattern-background-desktop.svg);
-  background-color: var(--pale-blue);
   background-repeat: no-repeat;
-  background-position: top;
   background-size: 100%;
+  background-color: var(--pale-blue);
+  background-position: top;
 }
 
 .container {
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  overflow: hidden;
 }
 
 .card {
-  background-color: #fff;
+  width: 88%;
+  margin-top: 7rem;
+  background-color: white;
   border-radius: 2rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombreado somente na parte inferior */
+  box-shadow: 10px 10px 20px hsl(245, 75%, 52%, 0.1),
+    15px 15px 30px hsl(245, 75%, 52%, 0.1);
 }
 
 .hero {
@@ -50,85 +52,106 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 80%;
-  margin: 0 auto; */
+  justify-content: center;
+  padding: 3rem;
 }
 
 .title {
-  padding: 3rem 0 2rem 0;
-  color: var(--dark-blue);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 900;
 }
 
 .description {
-  font-size: 1.5rem;
   color: var(--desaturated-blue);
-  width: 300px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1.6rem 1rem;
+  line-height: 2.4rem;
   text-align: center;
-  padding-bottom: 2rem;
 }
 
 .plan-card {
-  display: flex;
+  width: 100%;
+  background-color: var(--very-pale-blue);
+  border-radius: 1.5rem;
+  margin: 0.8rem 0;
+  padding: 1.6rem 1.2rem;
 }
 
 .list {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-bottom: 3rem;
-  background-color: var(--very-pale-blue);
 }
 
 .payment-plan {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.payment-plan h2 {
   color: var(--dark-blue);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 900;
+  margin-bottom: 0.5rem;
 }
 
-.payment-plan p {
+.price {
   color: var(--desaturated-blue);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 0.5;
 }
 
 .btn-change {
-  margin-left: 6rem;
-  padding: 1rem;
-  font-size: 1.2rem;
+  color: var(--bright-blue);
+  font-size: 1.3rem;
   font-weight: 700;
 }
-
-.card-dimension {
-  text-align: center;
+.btn-change:hover {
+  text-decoration: none;
+  opacity: 0.75;
 }
 
 .btn {
-  padding: 1.2rem;
-  border-radius: 0.65rem;
-  font-size: 1.2rem;
-  font-weight: 900;
-  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn.primary {
+.primary {
+  padding: 1.5rem;
+  /* I change margin to 1.8 rather than 1.5 */
+  margin: 1.8rem;
   background-color: var(--bright-blue);
-  color: var(--pale-blue);
-  margin-bottom: 2rem;
-  box-shadow: 0px 3px 10px rgba(114, 128, 167, 0.3);
+  border-radius: 1rem;
+
+  cursor: pointer;
+
+  box-shadow: 10px 10px 20px hsl(245, 75%, 52%, 0.15),
+    15px 15px 30px hsl(245, 75%, 52%, 0.15);
 }
 
-.btn.cancel {
-  font-weight: 900;
-  margin-bottom: 4rem;
+.primary:hover {
+  opacity: 0.7;
+}
+
+.primary a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.secondary {
+  /* I change padding to 0.6 rather than 0.8 */
+  padding: 0.6rem;
+}
+
+.secondary a {
   color: var(--desaturated-blue);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.secondary a:hover {
+  color: var(--dark-blue);
 }
